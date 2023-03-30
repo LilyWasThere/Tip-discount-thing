@@ -2,16 +2,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double amount = sc.nextDouble();
-        double cost = 5.00; // cost of your product
-        double tip = 1.7; // your tip
-        double total = amount * cost * tip;
-        if (amount >= 2) {
-            System.out.println(total / 10 * 2 - total); // pretty sure the 2 means how much is off in this case 2 == 20& and so on
+        int amount = sc.nextInt();
+        double cost = 5.00; // cost of said product
+        double tip = 1.07; // tip (1.07 = 7%)
+        double total = amount * cost * tip; 
+        double discount = total / 10 * 1 - total; // discount by 10%
+        double total2 = Math.abs(discount); // removes neg and makes pos
+        if (amount >= 2) { 
+            System.out.printf("%.2f", total2);
         } else {
-            System.out.println(total);
+            System.out.printf("%.2f", total);
         }
     }
 }
 
-// this is user input if you couldn't tell by the 3 lines of code dedicated for the user input 
+/*system.out.printf is used tell java how many decimal places it should have*/
